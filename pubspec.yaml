@@ -36,6 +36,8 @@ dependencies:
   firebase_auth: ^1.1.2
   cloud_firestore: ^1.0.7
   flutter_spinkit: ^5.0.0
+  firebase_database: ^6.1.2
+  flutter_signin_button: ^2.0.0
 
 dev_dependencies:
   flutter_test:
@@ -78,4 +80,3 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
-

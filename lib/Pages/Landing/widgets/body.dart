@@ -5,9 +5,9 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 30.0, left: 75),
+      padding: const EdgeInsets.only( left: 75),
       child: Container(
-        // height: MediaQuery.of(context).size.height - 700,
+        height: MediaQuery.of(context).size.height,
         child: Row(
           children: [
             Column(

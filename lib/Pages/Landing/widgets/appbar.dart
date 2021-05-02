@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ru_hackathon/Pages/Landing/googleloginIn/mainfile.dart';
 
 class Appbar extends StatefulWidget {
   @override
@@ -64,7 +65,13 @@ class _AppbarState extends State<Appbar> {
             ),
             ElevatedButton(
               child: Text('Login'),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => Googlelogin(),
+                  ),
+                );
+              },
               style: ElevatedButton.styleFrom(
                 elevation: 1,
                 primary: Colors.purple,

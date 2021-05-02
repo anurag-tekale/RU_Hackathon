@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:ru_hackathon/Pages/HomePage/mainfile.dart';
-import 'package:ru_hackathon/Pages/Landing/googleloginIn/app.dart';
-import 'package:ru_hackathon/Pages/Landing/googleloginIn/auth.dart';
-import 'package:nb_utils/nb_utils.dart';
+import 'package:ru_hackathon/Pages/Landing/googleloginIn/backend/mainfile.dart';
+import 'package:ru_hackathon/Pages/Landing/mainfile.dart';
 
 class Googlelogin extends StatefulWidget {
   @override
@@ -26,10 +23,9 @@ class Googlebody extends StatefulWidget {
 }
 
 class _GooglebodyState extends State<Googlebody> {
+  bool _isProcessing = false;
   @override
   Widget build(BuildContext context) {
-    final AuthProvider authProvider = Provider.of<AuthProvider>(context);
-    final AppProvider appProvider = Provider.of<AppProvider>(context);
     return Container(
       child: Row(
         children: [
@@ -64,11 +60,11 @@ class _GooglebodyState extends State<Googlebody> {
                   height: MediaQuery.of(context).size.height / 10,
                 ),
                 Container(
-                  height: 150,
+                  height: 200,
                   width: 400,
                   child: Column(
                     children: [
-                      TextField(
+                      TextFormField(
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderSide: BorderSide(
@@ -85,11 +81,17 @@ class _GooglebodyState extends State<Googlebody> {
                             ),
                           ),
                         ),
+                        validator: (value) {
+                          if (value.isEmpty) {
+                            return "Enter email i'd";
+                          }
+                          return null;
+                        },
                       ),
                       SizedBox(
                         height: MediaQuery.of(context).size.height / 25,
                       ),
-                      TextField(
+                      TextFormField(
                         obscureText: true,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
@@ -106,6 +108,16 @@ class _GooglebodyState extends State<Googlebody> {
                               width: 1.0,
                             ),
                           ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 25,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 25.0),
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text('Join us'),
                         ),
                       ),
                     ],
@@ -147,20 +159,28 @@ class _GooglebodyState extends State<Googlebody> {
                       ),
                     ),
                     onPressed: () async {
-                      appProvider.changeLoading();
-                      Map result = await authProvider.signInWithGoogle();
-                      bool success = result['success'];
-                      String message = result['message'];
-                      print(message);
-
-                      if (!success) {
-                        ScaffoldMessenger.of(context)
-                            .showSnackBar(SnackBar(content: Text(message)));
-                        appProvider.changeLoading();
-                      } else {
-                        appProvider.changeLoading();
-                        HomeScreen().launch(context);
-                      }
+                      setState(() {
+                        _isProcessing = true;
+                      });
+                      await signInWithGoogle().then(
+                        (result) {
+                          print(result);
+                          Navigator.of(context).pop();
+                          Navigator.of(context).pushReplacement(
+                            MaterialPageRoute(
+                              fullscreenDialog: true,
+                              builder: (context) => LoginPage(),
+                            ),
+                          );
+                        },
+                      ).catchError((error) {
+                        print('Registration Error: $error');
+                      });
+                      setState(
+                        () {
+                          _isProcessing = false;
+                        },
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(),
