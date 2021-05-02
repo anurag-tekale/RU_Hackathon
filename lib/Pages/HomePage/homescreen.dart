@@ -54,11 +54,6 @@ class _SidebarPageState extends State<SidebarPage> {
         isSelected: true,
       ),
       CollapsibleItem(
-        text: 'Group',
-        icon: Icons.person_outlined,
-        onPressed: () => setState(() => _headline = 'Errors'),
-      ),
-      CollapsibleItem(
         text: 'Find Tutor',
         icon: Icons.person_search_rounded,
         onPressed: () {

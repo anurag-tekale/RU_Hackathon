@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:ru_hackathon/Pages/HomePage/homescreen.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 const _url =
@@ -18,6 +19,10 @@ class _JoingroupState extends State<Joingroup> {
         child: Row(
           children: [
             Container(
+              width: MediaQuery.of(context).size.width / 5.5,
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width / 5.5,
               child: Column(
                 children: [
                   SizedBox(
@@ -104,18 +109,28 @@ class _JoingroupState extends State<Joingroup> {
                       children: [
                         FaIcon(
                           FontAwesomeIcons.thLarge,
-                          color: Colors.grey,
+                          color: Colors.red,
                         ),
                         SizedBox(
                           width: 15,
                         ),
-                        Text(
-                          'All DMs',
-                          style: TextStyle(
-                            color: Colors.grey,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 1,
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                builder: (BuildContext context) => HomeScreen(),
+                              ),
+                            );
+                            Navigator.of(context).pop();
+                          },
+                          child: Text(
+                            'DashBoard',
+                            style: TextStyle(
+                              color: Colors.red,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 1,
+                            ),
                           ),
                         ),
                       ],
