@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ru_hackathon/Pages/JoinGroup/mainfile.dart';
+import 'package:ru_hackathon/Pages/Landing/mainfile.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'RU Hackathon',
-      home: Joingroup(),
+      home: LoginPage(),
     );
   }
 }

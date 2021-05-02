@@ -8,7 +8,7 @@
       "name": "ru_hackathon",
       "request": "launch",
       "type": "dart",
-      "args": ["--web-port", "5000"]
+      "args": ["--web-port", "8080"]
     }
   ]
 }

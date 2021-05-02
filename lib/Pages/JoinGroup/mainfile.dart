@@ -18,10 +18,6 @@ class _JoingroupState extends State<Joingroup> {
         child: Row(
           children: [
             Container(
-              width: MediaQuery.of(context).size.width / 5.5,
-            ),
-            Container(
-              width: MediaQuery.of(context).size.width / 5.5,
               child: Column(
                 children: [
                   SizedBox(

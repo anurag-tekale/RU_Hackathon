@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ru_hackathon/Pages/HomePage/homescreen.dart';
+import 'package:ru_hackathon/Pages/JoinGroup/mainfile.dart';
 import 'package:ru_hackathon/Pages/Landing/googleloginIn/backend/mainfile.dart';
-import 'package:ru_hackathon/Pages/Landing/mainfile.dart';
 
 class Googlelogin extends StatefulWidget {
   @override
@@ -116,7 +117,14 @@ class _GooglebodyState extends State<Googlebody> {
                       Padding(
                         padding: const EdgeInsets.only(right: 25.0),
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                fullscreenDialog: true,
+                                builder: (context) => Joingroup(),
+                              ),
+                            );
+                          },
                           child: Text('Join us'),
                         ),
                       ),
@@ -169,7 +177,7 @@ class _GooglebodyState extends State<Googlebody> {
                           Navigator.of(context).pushReplacement(
                             MaterialPageRoute(
                               fullscreenDialog: true,
-                              builder: (context) => LoginPage(),
+                              builder: (context) => Joingroup(),
                             ),
                           );
                         },
