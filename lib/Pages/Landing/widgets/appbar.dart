@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ru_hackathon/Pages/Landing/googleloginIn/mainfile.dart';
 
 class Appbar extends StatefulWidget {
   @override
@@ -13,11 +12,10 @@ class _AppbarState extends State<Appbar> {
       padding: const EdgeInsets.only(),
       child: Container(
         height: MediaQuery.of(context).size.height - 700,
-        color: Colors.white,
         child: Row(
           children: [
             SizedBox(
-              width: 25,
+              width: 50,
             ),
             Text(
               'RU_hack',
@@ -27,61 +25,61 @@ class _AppbarState extends State<Appbar> {
                 wordSpacing: 1.0,
               ),
             ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width - 625,
-            ),
-            Text(
-              'Welcome',
-              style: TextStyle(
-                fontWeight: FontWeight.w500,
-                fontSize: 17,
-                wordSpacing: 2.0,
-              ),
-            ),
-            SizedBox(
-              width: 25,
-            ),
-            Text(
-              'LearningRoom',
-              style: TextStyle(
-                fontWeight: FontWeight.w500,
-                fontSize: 17,
-                wordSpacing: 2.0,
-              ),
-            ),
-            SizedBox(
-              width: 25,
-            ),
-            Text(
-              'Community',
-              style: TextStyle(
-                fontWeight: FontWeight.w500,
-                fontSize: 17,
-                wordSpacing: 2.0,
-              ),
-            ),
-            SizedBox(
-              width: 50,
-            ),
-            ElevatedButton(
-              child: Text('Login'),
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (BuildContext context) => Googlelogin(),
-                  ),
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                elevation: 1,
-                primary: Colors.purple,
-                padding: EdgeInsets.symmetric(horizontal: 25, vertical: 15),
-                textStyle: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
+            // SizedBox(
+            //   width: MediaQuery.of(context).size.width - 625,
+            // ),
+            // Text(
+            //   'Welcome',
+            //   style: TextStyle(
+            //     fontWeight: FontWeight.w500,
+            //     fontSize: 17,
+            //     wordSpacing: 2.0,
+            //   ),
+            // ),
+            // SizedBox(
+            //   width: 25,
+            // ),
+            // Text(
+            //   'LearningRoom',
+            //   style: TextStyle(
+            //     fontWeight: FontWeight.w500,
+            //     fontSize: 17,
+            //     wordSpacing: 2.0,
+            //   ),
+            // ),
+            // SizedBox(
+            //   width: 25,
+            // ),
+            // Text(
+            //   'Community',
+            //   style: TextStyle(
+            //     fontWeight: FontWeight.w500,
+            //     fontSize: 17,
+            //     wordSpacing: 2.0,
+            //   ),
+            // ),
+            // SizedBox(
+            //   width: 50,
+            // ),
+            // ElevatedButton(
+            //   child: Text('Login'),
+            //   onPressed: () {
+            //     Navigator.of(context).push(
+            //       MaterialPageRoute(
+            //         builder: (BuildContext context) => Googlelogin(),
+            //       ),
+            //     );
+            //   },
+            //   style: ElevatedButton.styleFrom(
+            //     elevation: 1,
+            //     primary: Colors.purple,
+            //     padding: EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+            //     textStyle: TextStyle(
+            //       fontSize: 18,
+            //       fontWeight: FontWeight.bold,
+            //     ),
+            //   ),
+            // ),
             // GestureDetector(
             //   onTap: () {},
             //   child: Container(

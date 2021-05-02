@@ -39,7 +39,7 @@ class Features extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Image.asset('assets/login1.png'),
+              Image.asset('assets/loginpage.png'),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
