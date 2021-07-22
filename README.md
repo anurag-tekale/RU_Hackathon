@@ -1,6 +1,6 @@
 # Ru_hackathon
 
-A new Flutter project.
+
 
 # Inspiration
 Our idea was basically inspired from those people who find it really difficult to focus on their task, especially while studying, and need some kind of motivation and help to complete it. And also, the people who enjoy group studying but are not able to do due to current pandemic situation.
